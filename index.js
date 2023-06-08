@@ -1,4 +1,3 @@
-// index.js
 const express = require('express');
 
 const app = express();
@@ -9,7 +8,9 @@ app.listen(PORT, () => {
 });
 
 app.get('/', (req, res) => {
-  res.send('Hey this is my API running 🥳');
+  res.json({
+    message: 'Hello, World!',
+  });
 });
 
 app.get('/about', (req, res) => {
