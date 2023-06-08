@@ -8,6 +8,10 @@ app.listen(PORT, () => {
 });
 
 app.get('/', (req, res) => {
+  res.setHeader('Content-Type', 'application/json');
+  res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate');
+  res.setHeader('Access-Control-Allow-Origin', '*');
+
   res.json({
     message: 'Hello, World!',
   });
